@@ -179,9 +179,22 @@ function rudr_gateway_by_country( $gateways ) {
 	return $gateways;
 
 }
+//add meta box in page post custom post 
 
+add_action('add_meta_boxes','jeetesh');
+function jeetesh(){
+	$screens=['post','page'];
 
+	foreach ($screens as $screen) {
+		add_meta_box('jid','wordpress-text','jeetesh1',$screen,'advanced','default','null');
+}
 
+}
+function jeetesh1($post){
+
+echo "<input type='text' name='jeetesh' >";
+
+}
 
 
 
